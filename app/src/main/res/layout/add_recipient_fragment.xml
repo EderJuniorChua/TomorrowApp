@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AddRecipientFragment"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+        <EditText
+            android:id="@+id/inputFullName"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="160dp"
+            android:ems="10"
+            android:hint="@string/FullName"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/inputPhoneNumber"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/inputPhoneNumber"
+            app:layout_constraintTop_toBottomOf="@+id/inputPhoneNumber">
+
+            <AutoCompleteTextView
+                android:id="@+id/inputPriorityGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/Priority"
+                android:inputType="none"
+                app:layout_constraintEnd_toEndOf="@+id/inputFullName"
+                app:layout_constraintStart_toStartOf="@+id/inputFullName"
+                app:layout_constraintTop_toBottomOf="@+id/inputFullName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <EditText
+            android:id="@+id/inputPhoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/PhoneNumber"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="@+id/inputFullName"
+            app:layout_constraintStart_toStartOf="@+id/inputFullName"
+            app:layout_constraintTop_toBottomOf="@+id/inputFullName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

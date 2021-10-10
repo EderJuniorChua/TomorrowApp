@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Schedule Alert</string>
+    <string name="Register">Register</string>
+    <string name="Login">Login</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="Confirm_Password">Confirm Password</string>
+    <string name="Register_Prompt">No account yet?</string>
+    <string name="Login_Prompt">Already have an account?</string>
+    <string name="Welcome">Welcome!</string>
+    <string name="Priority">Priority Group</string>
+    <string name="PhoneNumber">Phone Number</string>
+    <string name="FullName">Full Name</string>
+    <string name="add_vaccine_recipient">Add Vaccine Recipient</string>
+
+    <string-array name="priority_group">
+        <item>A1. Workers in Frontline Health Services</item>
+        <item>A2. All Senior Citizens</item>
+        <item>A3. Persons with Comorbidities</item>
+        <item>A4. Frontline personnel in essential sectors, including uniformed personnel</item>
+        <item>A5. Indigent Population</item>
+        <item>B1. Teachers, Social Workers</item>
+        <item>B2. Other Government Workers</item>
+        <item>B3. Other Essential Workers</item>
+        <item>B4. Socio-demographic groups at significantly higher risk other than senior citizens and poor population based on the NHTS-PR</item>
+        <item>B5. Overseas FIlipino Workers</item>
+        <item>B6. Other Remaining Workforce</item>
+        <item>C. Rest of the Filipino population not otherwise included in the above groups</item>
+
+    </string-array>
+</resources>
