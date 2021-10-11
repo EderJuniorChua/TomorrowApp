@@ -1,4 +1,4 @@
-package com.ederchua.schedulenotify
+package com.ederchua.tomorrowapp
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.time.LocalDate
 import java.time.LocalTime
-import java.util.*
 
 class AddRecipientActivity: AppCompatActivity() {
     private var userId = 0

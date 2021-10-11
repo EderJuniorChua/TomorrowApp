@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/addRecipientFragment"
-        android:name="com.ederchua.schedulenotify.AddRecipientFragment"
+        android:name="com.ederchua.tomorrowapp.AddRecipientFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

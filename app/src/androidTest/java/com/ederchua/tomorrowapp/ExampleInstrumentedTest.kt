@@ -1,4 +1,4 @@
-package com.ederchua.schedulenotify
+package com.ederchua.tomorrowapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

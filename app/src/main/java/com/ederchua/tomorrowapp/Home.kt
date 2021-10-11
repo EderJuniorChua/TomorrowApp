@@ -1,14 +1,11 @@
-package com.ederchua.schedulenotify
+package com.ederchua.tomorrowapp
 
 import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.telephony.SmsManager
-import android.telephony.TelephonyManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -18,9 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.LocalTime
-import java.util.*
 import kotlin.collections.ArrayList
 
 class Home : AppCompatActivity() {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ederchua.schedulenotify">
+    package="com.ederchua.tomorrowapp">
 
     <uses-permission android:name="android.permission.SEND_SMS"/>
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScheduleAlert">
         <activity
-            android:name=".Login"
+            android:name="com.ederchua.tomorrowapp.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,14 +21,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Home"
+            android:name="com.ederchua.tomorrowapp.Home"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true"/>
         <activity
-            android:name=".Register"
+            android:name="com.ederchua.tomorrowapp.Register"
             android:exported="true" />
         <activity
-            android:name=".AddRecipientActivity"
+            android:name="com.ederchua.tomorrowapp.AddRecipientActivity"
             android:exported="true"/>
 
 

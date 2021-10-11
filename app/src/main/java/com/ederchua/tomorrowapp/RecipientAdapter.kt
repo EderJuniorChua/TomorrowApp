@@ -1,4 +1,4 @@
-package com.ederchua.schedulenotify
+package com.ederchua.tomorrowapp
 
 import android.content.Context
 import android.content.Intent

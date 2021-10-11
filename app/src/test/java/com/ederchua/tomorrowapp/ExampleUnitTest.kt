@@ -1,4 +1,4 @@
-package com.ederchua.schedulenotify
+package com.ederchua.tomorrowapp
 
 import org.junit.Test
 

@@ -1,7 +1,7 @@
-package com.ederchua.schedulenotify
+package com.ederchua.tomorrowapp
 
 class Recipient {
-    var id: Int = 0;
+    var id: Int = 0
     var fullName: String = "Juan Dela Cruz"
     var priorityGroup: String = "C"
     var phoneNumber: String = ""
