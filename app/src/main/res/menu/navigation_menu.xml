@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_letterA" android:title="Letter A"/>
+    <item android:id="@+id/nav_letterB" android:title="Letter B"/>
+    <item android:id="@+id/nav_letterC" android:title="Letter C"/>
+</menu>

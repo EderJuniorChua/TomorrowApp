@@ -12,7 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScheduleAlert.NoActionBar">
         <activity
-            android:name="com.ederchua.tomorrowapp.Login"
+            android:name=".LetterBActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LetterAActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
             android:exported="true"
             android:theme="@style/Theme.ScheduleAlert.NoActionBar">
             <intent-filter>
@@ -22,19 +31,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ederchua.tomorrowapp.Home"
+            android:name=".Home"
             android:exported="true"
             android:theme="@style/Theme.ScheduleAlert.NoActionBar" />
         <activity
-            android:name="com.ederchua.tomorrowapp.Register"
+            android:name=".Register"
             android:exported="true"
             android:theme="@style/Theme.ScheduleAlert.NoActionBar" />
         <activity
-            android:name="com.ederchua.tomorrowapp.AddRecipientActivity"
+            android:name=".AddRecipientActivity"
             android:exported="true"
             android:theme="@style/Theme.ScheduleAlert.NoActionBar" />
-
-
     </application>
 
 </manifest>

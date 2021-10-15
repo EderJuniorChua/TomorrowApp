@@ -12,6 +12,8 @@
     <string name="PhoneNumber">Phone Number</string>
     <string name="FullName">Full Name</string>
     <string name="add_vaccine_recipient">Add Vaccine Recipient</string>
+    <string name="openNavDrawer">Navigation Drawer Opened</string>
+    <string name="closeNavDrawer">Navigation Drawer Closed</string>
 
     <string-array name="priority_group">
         <item>A1. Workers in Frontline Health Services</item>

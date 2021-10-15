@@ -36,8 +36,9 @@ class Login : AppCompatActivity() {
                 Toast.makeText(this, "Incorrect password", Toast.LENGTH_SHORT).show()
             } else {
                 permissionPrompt()
-                val intent = Intent(this, Home::class.java)
-                intent.putExtra("email", inputLoginEmail.text.toString())
+//                val intent = Intent(this, Home::class.java)
+//                intent.putExtra("email", inputLoginEmail.text.toString())
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
         }
