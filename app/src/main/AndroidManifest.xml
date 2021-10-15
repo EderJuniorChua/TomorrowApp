@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ederchua.tomorrowapp">
 
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +13,8 @@
         android:theme="@style/Theme.ScheduleAlert.NoActionBar">
         <activity
             android:name="com.ederchua.tomorrowapp.Login"
-            android:theme="@style/Theme.ScheduleAlert.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.ScheduleAlert.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,16 +23,16 @@
         </activity>
         <activity
             android:name="com.ederchua.tomorrowapp.Home"
-            android:theme="@style/Theme.ScheduleAlert.NoActionBar"
-            android:exported="true"/>
+            android:exported="true"
+            android:theme="@style/Theme.ScheduleAlert.NoActionBar" />
         <activity
             android:name="com.ederchua.tomorrowapp.Register"
-            android:theme="@style/Theme.ScheduleAlert.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.ScheduleAlert.NoActionBar" />
         <activity
             android:name="com.ederchua.tomorrowapp.AddRecipientActivity"
-            android:theme="@style/Theme.ScheduleAlert.NoActionBar"
-            android:exported="true"/>
+            android:exported="true"
+            android:theme="@style/Theme.ScheduleAlert.NoActionBar" />
 
 
     </application>
