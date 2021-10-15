@@ -10,9 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ScheduleAlert">
+        android:theme="@style/Theme.ScheduleAlert.NoActionBar">
         <activity
             android:name="com.ederchua.tomorrowapp.Login"
+            android:theme="@style/Theme.ScheduleAlert.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,13 +23,15 @@
         </activity>
         <activity
             android:name="com.ederchua.tomorrowapp.Home"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:theme="@style/Theme.ScheduleAlert.NoActionBar"
             android:exported="true"/>
         <activity
             android:name="com.ederchua.tomorrowapp.Register"
+            android:theme="@style/Theme.ScheduleAlert.NoActionBar"
             android:exported="true" />
         <activity
             android:name="com.ederchua.tomorrowapp.AddRecipientActivity"
+            android:theme="@style/Theme.ScheduleAlert.NoActionBar"
             android:exported="true"/>
 
 
