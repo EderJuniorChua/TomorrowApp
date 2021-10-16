@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.time.LocalDate
 import java.time.LocalTime
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import kotlin.collections.ArrayList
 
 class Home : AppCompatActivity() {
@@ -66,7 +68,10 @@ class Home : AppCompatActivity() {
         val tvEmail = findViewById<TextView>(R.id.tvEmail)
         val tvDate = findViewById<TextView>(R.id.tvDate)
         tvEmail.text = "Hello, " + email.split("@")[0] + "!"
-        tvDate.text = LocalTime.now().toString()
+        tvDate.text = LocalTime
+                                .now(ZoneId.systemDefault())
+                                .format(DateTimeFormatter.ofPattern("HH:mm"))
+                                .toString()
 
         val btnAddRecipient = findViewById<FloatingActionButton>(R.id.btnAddRecipient)
         btnAddRecipient.setOnClickListener {
