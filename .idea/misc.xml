@@ -22,10 +22,12 @@
         <entry key="..\:/Users/ederc/AndroidStudioProjects/TomorrowApp/app/src/main/res/layout/add_recipient_fragment.xml" value="0.18085106382978725" />
         <entry key="..\:/Users/ederc/AndroidStudioProjects/TomorrowApp/app/src/main/res/layout/confirmed_recipients.xml" value="0.18085106382978725" />
         <entry key="..\:/Users/ederc/AndroidStudioProjects/TomorrowApp/app/src/main/res/layout/home.xml" value="0.18085106382978725" />
+        <entry key="..\:/Users/pjgal/Documents/GitHub/TomorrowApp/app/src/main/res/layout/login.xml" value="0.2758152173913043" />
+        <entry key="..\:/Users/pjgal/Documents/GitHub/TomorrowApp/app/src/main/res/layout/register.xml" value="0.18085106382978725" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
