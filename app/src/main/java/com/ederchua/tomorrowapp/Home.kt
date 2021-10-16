@@ -13,7 +13,11 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
+import com.ederchua.tomorrowapp.fragments.RecipientsFragment
+import com.ederchua.tomorrowapp.fragments.adapter.ViewPagerAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.tabs.TabLayout
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.ZoneId
@@ -30,8 +34,7 @@ class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home)
-
-
+        setUpTabs()
 
         val btnSend = findViewById<Button>(R.id.btnSend)
         btnSend.setOnClickListener {
@@ -66,12 +69,12 @@ class Home : AppCompatActivity() {
         }
 
         val tvEmail = findViewById<TextView>(R.id.tvEmail)
-        val tvDate = findViewById<TextView>(R.id.tvDate)
+        //val tvDate = findViewById<TextView>(R.id.tvDate)
         tvEmail.text = "Hello, " + email.split("@")[0] + "!"
-        tvDate.text = LocalTime
-                                .now(ZoneId.systemDefault())
-                                .format(DateTimeFormatter.ofPattern("HH:mm"))
-                                .toString()
+//        tvDate.text = LocalTime
+//                                .now(ZoneId.systemDefault())
+//                                .format(DateTimeFormatter.ofPattern("HH:mm"))
+//                                .toString()
 
         val btnAddRecipient = findViewById<FloatingActionButton>(R.id.btnAddRecipient)
         btnAddRecipient.setOnClickListener {
@@ -103,6 +106,18 @@ class Home : AppCompatActivity() {
 
     override fun onBackPressed() {
         moveTaskToBack(true)
+    }
+
+    private fun setUpTabs() {
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(RecipientsFragment(), "Recipients")
+        adapter.addFragment(RecipientsFragment(), "Recipients2")
+        val viewPager = findViewById<ViewPager>(R.id.viewPager)
+        viewPager.adapter = adapter
+        val tabs = findViewById<TabLayout>(R.id.tabs)
+        tabs.setupWithViewPager(viewPager)
+
+
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
