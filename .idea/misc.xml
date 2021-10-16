@@ -18,6 +18,10 @@
         <entry key="..\:/Users/ederc/AndroidStudioProjects/ScheduleAlert/app/src/main/res/layout/login.xml" value="0.33" />
         <entry key="..\:/Users/ederc/AndroidStudioProjects/ScheduleAlert/app/src/main/res/layout/recipient_item.xml" value="0.33" />
         <entry key="..\:/Users/ederc/AndroidStudioProjects/ScheduleAlert/app/src/main/res/layout/register.xml" value="0.18885869565217392" />
+        <entry key="..\:/Users/ederc/AndroidStudioProjects/TomorrowApp/app/src/main/res/layout/add_recipient_activity.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/ederc/AndroidStudioProjects/TomorrowApp/app/src/main/res/layout/add_recipient_fragment.xml" value="0.18085106382978725" />
+        <entry key="..\:/Users/ederc/AndroidStudioProjects/TomorrowApp/app/src/main/res/layout/confirmed_recipients.xml" value="0.18085106382978725" />
+        <entry key="..\:/Users/ederc/AndroidStudioProjects/TomorrowApp/app/src/main/res/layout/home.xml" value="0.18085106382978725" />
       </map>
     </option>
   </component>

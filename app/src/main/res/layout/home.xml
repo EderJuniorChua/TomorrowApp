@@ -43,15 +43,17 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvDate"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputSearch"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="10dp"
-            android:padding="15dp"
-            android:text="January 1, 2000"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@android:string/search_go" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnSend"
