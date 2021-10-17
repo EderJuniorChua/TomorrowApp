@@ -140,7 +140,7 @@ class SQLHelper(context: Context) :
     }
 
     @SuppressLint("Range")
-    fun getRecipient(): ArrayList<Recipient> {
+    fun getRecipients(): ArrayList<Recipient> {
         val list = ArrayList<Recipient>()
         val db = this.readableDatabase
         val query = "SELECT * FROM $TABLE_RECIPIENT"
