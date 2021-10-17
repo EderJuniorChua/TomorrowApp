@@ -89,6 +89,7 @@
             android:layout_height="match_parent"/>
 
         <Button
+            android:backgroundTint="@color/dustyRose"
             android:id="@+id/btnRemove"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
