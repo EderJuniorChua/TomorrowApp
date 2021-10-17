@@ -25,7 +25,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class RecipientsFragment : Fragment() {
 
-    lateinit var recipients: ArrayList<Recipient>
+    private lateinit var recipients: ArrayList<Recipient>
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -65,14 +65,14 @@ class RecipientsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var rgRecipientsFilter = requireView().findViewById<RadioGroup>(R.id.rgRecipientsFilter)
+        val rgRecipientsFilter = requireView().findViewById<RadioGroup>(R.id.rgRecipientsFilter)
         rgRecipientsFilter.check(R.id.rbUnsentRecipients)
 
         rgRecipientsFilter.setOnCheckedChangeListener { _, i ->
             if (i == R.id.rbSentRecipients) {
                 filterSent = true
             } else if (i == R.id.rbUnsentRecipients){
-                filterSent = false;
+                filterSent = false
             }
             refreshRecipientList()
         }
