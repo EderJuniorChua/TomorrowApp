@@ -26,7 +26,6 @@ import kotlin.collections.ArrayList
 
 class Home : AppCompatActivity() {
 
-    lateinit var recipients: ArrayList<Recipient>
     private lateinit var email: String
 
 
@@ -36,15 +35,15 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.home)
         setUpTabs()
 
-        val btnSend = findViewById<Button>(R.id.btnSend)
-        btnSend.setOnClickListener {
-            for (r in recipients){
-                if(r.messageSent == 0){
-                    sendMessage(r)
-                    r.messageSent = 1
-                }
-            }
-        }
+//        val btnSend = findViewById<Button>(R.id.btnSend)
+//        btnSend.setOnClickListener {
+//            for (r in recipients){
+//                if(r.messageSent == 0){
+//                    sendMessage(r)
+//                    r.messageSent = 1
+//                }
+//            }
+//        }
 
         val btnLogout = findViewById<TextView>(R.id.btnLogout)
         btnLogout.setOnClickListener {
@@ -85,24 +84,6 @@ class Home : AppCompatActivity() {
 //            refreshRecipientList()
         }
     }
-
-    override fun onResume() {
-        super.onResume()
-//        refreshRecipientList()
-        println("Updating/Refresh on resume")
-    }
-
-//    fun refreshRecipientList() {
-//        val rvRecipient = findViewById<RecyclerView>(R.id.rvRecipient)
-//        recipients = SQLHelper(this).getRecipient()
-//        val adapter = RecipientAdapter(recipients)
-//
-//        println("${adapter.itemCount} =======================================================")
-//        if (adapter.itemCount > 0) {
-//            rvRecipient.adapter = adapter
-//            rvRecipient.layoutManager = LinearLayoutManager(this)
-//        }
-//    }
 
     override fun onBackPressed() {
         moveTaskToBack(true)
