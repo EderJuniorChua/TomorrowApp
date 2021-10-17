@@ -14,7 +14,7 @@
     <string name="add_vaccine_recipient">Add Vaccine Recipient</string>
 
     <string-array name="priority_group">
-        <item>A1. Workers in Frontline Health Services</item>
+        <item>A1. Workers in Front Line Health Services</item>
         <item>A2. All Senior Citizens</item>
         <item>A3. Persons with Comorbidities</item>
         <item>A4. Frontline personnel in essential sectors, including uniformed personnel</item>
