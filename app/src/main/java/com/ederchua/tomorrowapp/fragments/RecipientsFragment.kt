@@ -40,7 +40,7 @@ class RecipientsFragment : Fragment() {
 
     private fun refreshRecipientList() {
     val rvRecipient:RecyclerView = requireView().findViewById(R.id.rvRecipient)
-    recipients = SQLHelper(requireView().context).getRecipient()
+    recipients = SQLHelper(requireView().context).getRecipients()
     val adapter = RecipientAdapter(recipients)
 
     println("${adapter.itemCount} =======================================================")
