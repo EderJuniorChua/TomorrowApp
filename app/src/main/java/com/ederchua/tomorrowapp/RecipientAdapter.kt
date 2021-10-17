@@ -21,7 +21,7 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
 //        val tvDateTarget = itemView.findViewById<TextView>(R.id.tvDateSchedule)
 //        val tvTimeTarget = itemView.findViewById<TextView>(R.id.tvTimeSchedule)
 //        val cbMessageSent = itemView.findViewById<CheckBox>(R.id.cbMessageSent)
-//        val btnDelete = itemView.findViewById<ImageButton>(R.id.btnDelete)
+        val btnDelete = itemView.findViewById<Button>(R.id.btnRemove)
         val layoutRecipientInfo = itemView.findViewById<LinearLayout>(R.id.layoutRecipientInfo)
     }
 
@@ -50,8 +50,8 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
 //        val messageSent = holder.cbMessageSent
 //        messageSent.isChecked = recipient.messageSent.toBoolean()
 //
-//        val btnDeleteRecipient = holder.btnDelete
-//        btnDeleteRecipient.setOnClickListener(View.OnClickListener { removeRecipient(holder, position, holder.itemView.context) })
+        val btnDeleteRecipient = holder.btnDelete
+        btnDeleteRecipient.setOnClickListener(View.OnClickListener { removeRecipient(holder, position, holder.itemView.context) })
 
         //messageSent.setOnCheckedChangeListener(null)
         //messageSent.isChecked = recipient.messageSent == 1
