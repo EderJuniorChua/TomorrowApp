@@ -82,27 +82,27 @@ class Home : AppCompatActivity() {
             intent.putExtra("userId", SQLHelper(this).getUserIdFromEmail(email))
             startActivity(intent)
             println("Added")
-            refreshRecipientList()
+//            refreshRecipientList()
         }
     }
 
     override fun onResume() {
         super.onResume()
-        refreshRecipientList()
+//        refreshRecipientList()
         println("Updating/Refresh on resume")
     }
 
-    fun refreshRecipientList() {
-        val rvRecipient = findViewById<RecyclerView>(R.id.rvRecipient)
-        recipients = SQLHelper(this).getRecipient()
-        val adapter = RecipientAdapter(recipients)
-
-        println("${adapter.itemCount} =======================================================")
-        if (adapter.itemCount > 0) {
-            rvRecipient.adapter = adapter
-            rvRecipient.layoutManager = LinearLayoutManager(this)
-        }
-    }
+//    fun refreshRecipientList() {
+//        val rvRecipient = findViewById<RecyclerView>(R.id.rvRecipient)
+//        recipients = SQLHelper(this).getRecipient()
+//        val adapter = RecipientAdapter(recipients)
+//
+//        println("${adapter.itemCount} =======================================================")
+//        if (adapter.itemCount > 0) {
+//            rvRecipient.adapter = adapter
+//            rvRecipient.layoutManager = LinearLayoutManager(this)
+//        }
+//    }
 
     override fun onBackPressed() {
         moveTaskToBack(true)
@@ -140,7 +140,7 @@ class Home : AppCompatActivity() {
         recipient.dateTarget = LocalDate.now().toString()
         recipient.timeTarget = LocalTime.now().plusHours(2).toString()
         SQLHelper(this).updateRecipient(recipient)
-        refreshRecipientList()
+//        refreshRecipientList()
 
     }
 }
