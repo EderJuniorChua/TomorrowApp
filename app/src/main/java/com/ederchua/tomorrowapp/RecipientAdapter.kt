@@ -2,10 +2,12 @@ package com.ederchua.tomorrowapp
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -35,6 +37,7 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
         return ViewHolder(recipient)
     }
     
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: RecipientAdapter.ViewHolder, position: Int) {
         val recipient: Recipient = recipients.get(position)
         val fullName = holder.tvFullName
@@ -54,6 +57,10 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
         val btnAdaptive = holder.btnAdaptive
         if (recipient.messageSent==0) {
             btnAdaptive.text = "Send one"
+            btnAdaptive.setOnClickListener(View.OnClickListener {
+                SMSHelper().sendMessage(recipient, holder.itemView.context)
+                moveToSent(recipient, position, holder.itemView.context)
+            })
         } else if (recipient.messageSent == 1) {
             btnAdaptive.text = "Move to unsent"
             btnAdaptive.setOnClickListener(View.OnClickListener { moveToUnsent(recipient, position, holder.itemView.context) })
@@ -84,6 +91,13 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
 
     private fun moveToUnsent(recipient: Recipient, position: Int, context: Context){
         recipient.messageSent = 0
+        recipients.removeAt(position)
+        notifyItemRemoved(position)
+        SQLHelper(context).updateRecipient(recipient)
+    }
+
+    private fun moveToSent(recipient: Recipient, position: Int, context: Context){
+        recipient.messageSent = 1
         recipients.removeAt(position)
         notifyItemRemoved(position)
         SQLHelper(context).updateRecipient(recipient)
