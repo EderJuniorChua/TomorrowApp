@@ -62,9 +62,9 @@ class RecipientsFragment : Fragment() {
         return inflater.inflate(R.layout.recipients_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        super.onActivityCreated(savedInstanceState)
         var rgRecipientsFilter = requireView().findViewById<RadioGroup>(R.id.rgRecipientsFilter)
         rgRecipientsFilter.check(R.id.rbUnsentRecipients)
 
