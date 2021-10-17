@@ -164,6 +164,56 @@ class SQLHelper(context: Context) :
         return list
     }
 
+    @SuppressLint("Range")
+    fun getSentRecipients(): ArrayList<Recipient> {
+        val list = ArrayList<Recipient>()
+        val db = this.readableDatabase
+        val query = "SELECT * FROM $TABLE_RECIPIENT WHERE $COL_RECIPIENT_MESSAGE_SENT = '1'"
+        val result = db.rawQuery(query, null)
+        if (result.moveToFirst()) {
+            do {
+                val recipient = Recipient()
+                recipient.id = result.getInt(result.getColumnIndex(COL_RECIPIENT_ID))
+                recipient.fullName = result.getString(result.getColumnIndex(COL_RECIPIENT_FULLNAME)).toString()
+                recipient.priorityGroup = result.getString(result.getColumnIndex(COL_RECIPIENT_PRIORITY_GROUP)).toString()
+                recipient.phoneNumber = result.getString(result.getColumnIndex(COL_RECIPIENT_PHONENUMBER)).toString()
+                recipient.dateTarget = result.getString(result.getColumnIndex(COL_RECIPIENT_DATE_TARGET)).toString()
+                recipient.timeTarget = result.getString(result.getColumnIndex(COL_RECIPIENT_TIME_TARGET)).toString()
+                recipient.messageSent = result.getInt(result.getColumnIndex(COL_RECIPIENT_MESSAGE_SENT))
+
+                println("RETRIEVING RECIPIENT ${recipient.id}")
+                list.add(recipient)
+            } while (result.moveToNext())
+        }
+        db.close()
+        return list
+    }
+
+    @SuppressLint("Range")
+    fun getUnsentRecipients(): ArrayList<Recipient> {
+        val list = ArrayList<Recipient>()
+        val db = this.readableDatabase
+        val query = "SELECT * FROM $TABLE_RECIPIENT WHERE $COL_RECIPIENT_MESSAGE_SENT = '0'"
+        val result = db.rawQuery(query, null)
+        if (result.moveToFirst()) {
+            do {
+                val recipient = Recipient()
+                recipient.id = result.getInt(result.getColumnIndex(COL_RECIPIENT_ID))
+                recipient.fullName = result.getString(result.getColumnIndex(COL_RECIPIENT_FULLNAME)).toString()
+                recipient.priorityGroup = result.getString(result.getColumnIndex(COL_RECIPIENT_PRIORITY_GROUP)).toString()
+                recipient.phoneNumber = result.getString(result.getColumnIndex(COL_RECIPIENT_PHONENUMBER)).toString()
+                recipient.dateTarget = result.getString(result.getColumnIndex(COL_RECIPIENT_DATE_TARGET)).toString()
+                recipient.timeTarget = result.getString(result.getColumnIndex(COL_RECIPIENT_TIME_TARGET)).toString()
+                recipient.messageSent = result.getInt(result.getColumnIndex(COL_RECIPIENT_MESSAGE_SENT))
+
+                println("RETRIEVING RECIPIENT ${recipient.id}")
+                list.add(recipient)
+            } while (result.moveToNext())
+        }
+        db.close()
+        return list
+    }
+
 
 
 }
