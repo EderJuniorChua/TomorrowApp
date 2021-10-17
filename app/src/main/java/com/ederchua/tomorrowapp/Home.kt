@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.telephony.SmsManager
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -45,7 +46,7 @@ class Home : AppCompatActivity() {
 //            }
 //        }
 
-        val btnLogout = findViewById<TextView>(R.id.btnLogout)
+        val btnLogout = findViewById<ImageButton>(R.id.btnLogout)
         btnLogout.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setMessage("Are you sure you want to log out?")
@@ -67,9 +68,9 @@ class Home : AppCompatActivity() {
             email = bundle.getString("email").toString()
         }
 
-        val tvEmail = findViewById<TextView>(R.id.tvEmail)
+        val tvGreeting = findViewById<TextView>(R.id.tvHomeGreeting)
         //val tvDate = findViewById<TextView>(R.id.tvDate)
-        tvEmail.text = "Hello, " + email.split("@")[0] + "!"
+        tvGreeting.text = "Hello, " + email.split("@")[0] + "!"
 //        tvDate.text = LocalTime
 //                                .now(ZoneId.systemDefault())
 //                                .format(DateTimeFormatter.ofPattern("HH:mm"))

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    android:background="@color/blackPearl"
     android:orientation="vertical">
 
 
@@ -22,47 +22,98 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:padding="10dp"
-                android:text="Hi, manager!"
-                android:textColor="@color/white"
-                android:textSize="34sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
+            <ImageButton
                 android:id="@+id/btnLogout"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/blue_500"
-                android:text="Logout"
-                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_exit_to_app_30"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_margin="5dp"
+                android:background="@color/transparent"/>
+
+<!--            <Button-->
+<!--                android:id="@+id/btnLogout"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:backgroundTint="@color/blue_500"-->
+<!--                android:text="Logout"-->
+<!--                android:textColor="@color/white"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvHomeGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/placeholderGreeting"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHomeEstablishment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+
+                android:text="@string/placeholderEstablishment"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHomeLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+
+                android:text="@string/placeholderLocation"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHomePhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+
+                android:text="@string/placeholderNumber"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+<!--        <Space-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp" />-->
     </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout
-
+        android:elevation="10dp"
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/panelHomeHeader"
-        app:tabBackground="@color/primary"
+        app:tabBackground="@color/ebonyClay"
         app:tabGravity="fill"
         app:tabInlineLabel="true"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/secondary"
-        app:tabTextColor="@color/black">
+        app:tabSelectedTextColor="@color/macawBlueGreen"
+        app:tabTextColor="@color/blackPearl">
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -78,12 +129,14 @@
 
 
     <LinearLayout
+        android:elevation="50dp"
         android:id="@+id/panelHomeButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="15dp"
+        android:background="@color/ebonyClay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPager">
 
@@ -105,12 +158,8 @@
             android:id="@+id/btnAddRecipient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/secondary"
-            android:backgroundTint="#1167b1"
             android:contentDescription="@string/add_vaccine_recipient"
-            app:backgroundTint="@color/white"
-            app:srcCompat="@drawable/ic_baseline_person_add_alt_1_24"
-            app:tint="@color/white" />
+            app:srcCompat="@drawable/ic_baseline_person_add_alt_1_24"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
