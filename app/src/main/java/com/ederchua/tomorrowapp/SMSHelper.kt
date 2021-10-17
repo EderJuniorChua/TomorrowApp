@@ -14,7 +14,7 @@ class SMSHelper {
 
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun sendMessage(recipient: Recipient, context: Context) {
+    fun sendMessage(recipient: Recipient, context: Context) {
 
         print("sendMessage(): sending message to $recipient.phoneNumber")
 
