@@ -63,6 +63,6 @@ class AddRecipientActivity: AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        moveTaskToBack(true)
+        finish()
     }
 }
