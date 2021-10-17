@@ -5,10 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.CompoundButton
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -21,11 +18,11 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
         val tvFullName = itemView.findViewById<TextView>(R.id.tvFullName)
         val tvPriorityGroup = itemView.findViewById<TextView>(R.id.tvPriorityGroup)
         val tvPhoneNumber = itemView.findViewById<TextView>(R.id.tvPhoneNumber)
-        val tvDateTarget = itemView.findViewById<TextView>(R.id.tvDateSchedule)
-        val tvTimeTarget = itemView.findViewById<TextView>(R.id.tvTimeSchedule)
-        val cbMessageSent = itemView.findViewById<CheckBox>(R.id.cbMessageSent)
-        val btnDelete = itemView.findViewById<ImageButton>(R.id.btnDelete)
-        val layoutRecipientInfo = itemView.findViewById<ConstraintLayout>(R.id.layoutRecipientInfo)
+//        val tvDateTarget = itemView.findViewById<TextView>(R.id.tvDateSchedule)
+//        val tvTimeTarget = itemView.findViewById<TextView>(R.id.tvTimeSchedule)
+//        val cbMessageSent = itemView.findViewById<CheckBox>(R.id.cbMessageSent)
+//        val btnDelete = itemView.findViewById<ImageButton>(R.id.btnDelete)
+        val layoutRecipientInfo = itemView.findViewById<LinearLayout>(R.id.layoutRecipientInfo)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -45,26 +42,26 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
         priorityGroup.setText(recipient.priorityGroup)
         val phoneNumber = holder.tvPhoneNumber
         phoneNumber.setText(recipient.phoneNumber)
-        val dateTarget = holder.tvDateTarget
-        dateTarget.setText(recipient.dateTarget)
-        val timeTarget = holder.tvTimeTarget
-        timeTarget.setText(recipient.timeTarget)
-
-        val messageSent = holder.cbMessageSent
-        messageSent.isChecked = recipient.messageSent.toBoolean()
-
-        val btnDeleteRecipient = holder.btnDelete
-        btnDeleteRecipient.setOnClickListener(View.OnClickListener { removeRecipient(holder, position, holder.itemView.context) })
+//        val dateTarget = holder.tvDateTarget
+//        dateTarget.setText(recipient.dateTarget)
+//        val timeTarget = holder.tvTimeTarget
+//        timeTarget.setText(recipient.timeTarget)
+//
+//        val messageSent = holder.cbMessageSent
+//        messageSent.isChecked = recipient.messageSent.toBoolean()
+//
+//        val btnDeleteRecipient = holder.btnDelete
+//        btnDeleteRecipient.setOnClickListener(View.OnClickListener { removeRecipient(holder, position, holder.itemView.context) })
 
         //messageSent.setOnCheckedChangeListener(null)
         //messageSent.isChecked = recipient.messageSent == 1
 
-        messageSent.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { _, isChecked ->
-            run {
-                isChecked != isChecked
-                updateMessageSent(recipient, isChecked, holder.itemView.context)
-            }
-        })
+//        messageSent.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { _, isChecked ->
+//            run {
+//                isChecked != isChecked
+//                updateMessageSent(recipient, isChecked, holder.itemView.context)
+//            }
+//        })
 
         val layoutRecipientInfo = holder.layoutRecipientInfo
         layoutRecipientInfo.setOnClickListener {

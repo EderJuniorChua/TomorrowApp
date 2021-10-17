@@ -1,89 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutRecipientInfo"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#F3F3F3"
-    android:minHeight="225dp">
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/recipient_item_background"
+    android:orientation="vertical"
+    android:padding="30dp">
 
-    <TextView
-        android:id="@+id/tvFullName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/FullName"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias=".1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvTimeSchedule"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tvFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/FullName"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/PhoneNumber"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvPriorityGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/Priority"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvTimeSchedule"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="N/A"-->
+    <!--        android:textSize="12sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/tvFullName"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/btnDelete"-->
+    <!--        app:layout_constraintHorizontal_bias="0.85"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tvFullName" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvDateSchedule"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="TO BE SENT"-->
+    <!--        android:textSize="12sp"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/btnDelete"-->
+    <!--        app:layout_constraintHorizontal_bias=".8"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tvFullName"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/tvFullName" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="N/A"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFullName"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toEndOf="@+id/tvFullName" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tvDateSchedule"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TO BE SENT"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
-        app:layout_constraintHorizontal_bias=".8"
-        app:layout_constraintStart_toEndOf="@+id/tvFullName"
-        app:layout_constraintTop_toTopOf="@+id/tvFullName" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="0.5"
+            android:text="Move to next" />
 
-    <ImageButton
-        android:id="@+id/btnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTimeSchedule"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvDateSchedule"
-        app:srcCompat="@drawable/ic_baseline_delete_24" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight=".5"
+            android:text="Remove" />
+    </LinearLayout>
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/btnDelete"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="50dp"-->
+    <!--        android:minHeight="48dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/tvTimeSchedule"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/tvDateSchedule"-->
+    <!--        app:srcCompat="@drawable/ic_baseline_delete_24" />-->
 
-    <TextView
-        android:id="@+id/tvPriorityGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/Priority"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnDelete"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvPhoneNumber"
-        app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber" />
 
-    <TextView
-        android:id="@+id/tvPhoneNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/PhoneNumber"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnDelete"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvFullName"
-        app:layout_constraintTop_toBottomOf="@+id/tvFullName" />
+    <!--    <CheckBox-->
+    <!--        android:id="@+id/cbMessageSent"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:text="Reminder Message Sent"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tvPriorityGroup"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tvPriorityGroup" />-->
 
-    <CheckBox
-        android:id="@+id/cbMessageSent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Reminder Message Sent"
-        app:layout_constraintStart_toStartOf="@+id/tvPriorityGroup"
-        app:layout_constraintTop_toBottomOf="@+id/tvPriorityGroup" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
