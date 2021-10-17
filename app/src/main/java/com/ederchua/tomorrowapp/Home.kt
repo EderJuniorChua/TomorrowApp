@@ -83,6 +83,12 @@ class Home : AppCompatActivity() {
             println("Added")
 //            refreshRecipientList()
         }
+
+        val btnSendToAll = findViewById<Button>(R.id.btnSendToAll)
+        btnSendToAll.setOnClickListener {
+            SMSHelper().sendMessageToAllUnsent(this)
+            setUpTabs()
+        }
     }
 
     override fun onBackPressed() {
