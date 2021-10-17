@@ -55,7 +55,7 @@ class RecipientsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recipients, container, false)
+        return inflater.inflate(R.layout.recipients_fragment, container, false)
     }
 
     companion object {
