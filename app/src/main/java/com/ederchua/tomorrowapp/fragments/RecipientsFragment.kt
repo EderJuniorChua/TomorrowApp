@@ -45,17 +45,13 @@ class RecipientsFragment : Fragment() {
         val rvRecipient: RecyclerView = requireView().findViewById(R.id.rvRecipient)
         if (filterSent) {
             recipients = SQLHelper(requireView().context).getSentRecipients()
-        } else {
+        } else if (!filterSent){
             recipients = SQLHelper(requireView().context).getUnsentRecipients()
         }
 
         val adapter = RecipientAdapter(recipients)
-
-        println("${adapter.itemCount} =======================================================")
-        if (adapter.itemCount > 0) {
-            rvRecipient.adapter = adapter
-            rvRecipient.layoutManager = LinearLayoutManager(requireView().context)
-        }
+        rvRecipient.adapter = adapter
+        rvRecipient.layoutManager = LinearLayoutManager(requireView().context)
     }
 
     override fun onCreateView(
@@ -72,7 +68,7 @@ class RecipientsFragment : Fragment() {
         var rgRecipientsFilter = requireView().findViewById<RadioGroup>(R.id.rgRecipientsFilter)
         rgRecipientsFilter.check(R.id.rbUnsentRecipients)
 
-        rgRecipientsFilter.setOnCheckedChangeListener { radioGroup, i ->
+        rgRecipientsFilter.setOnCheckedChangeListener { _, i ->
             if (i == R.id.rbSentRecipients) {
                 filterSent = true
             } else if (i == R.id.rbUnsentRecipients){

@@ -21,6 +21,7 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
 //        val tvDateTarget = itemView.findViewById<TextView>(R.id.tvDateSchedule)
 //        val tvTimeTarget = itemView.findViewById<TextView>(R.id.tvTimeSchedule)
 //        val cbMessageSent = itemView.findViewById<CheckBox>(R.id.cbMessageSent)
+        val btnAdaptive = itemView.findViewById<Button>(R.id.btnAdaptive)
         val btnDelete = itemView.findViewById<Button>(R.id.btnRemove)
         val layoutRecipientInfo = itemView.findViewById<LinearLayout>(R.id.layoutRecipientInfo)
     }
@@ -36,8 +37,8 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
     
     override fun onBindViewHolder(holder: RecipientAdapter.ViewHolder, position: Int) {
         val recipient: Recipient = recipients.get(position)
-        val fulLName = holder.tvFullName
-        fulLName.setText(recipient.fullName)
+        val fullName = holder.tvFullName
+        fullName.setText(recipient.fullName)
         val priorityGroup = holder.tvPriorityGroup
         priorityGroup.setText(recipient.priorityGroup)
         val phoneNumber = holder.tvPhoneNumber
@@ -50,6 +51,14 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
 //        val messageSent = holder.cbMessageSent
 //        messageSent.isChecked = recipient.messageSent.toBoolean()
 //
+        val btnAdaptive = holder.btnAdaptive
+        if (recipient.messageSent==0) {
+            btnAdaptive.text = "Send one"
+        } else if (recipient.messageSent == 1) {
+            btnAdaptive.text = "Move to unsent"
+            btnAdaptive.setOnClickListener(View.OnClickListener { moveToUnsent(recipient, position, holder.itemView.context) })
+        }
+
         val btnDeleteRecipient = holder.btnDelete
         btnDeleteRecipient.setOnClickListener(View.OnClickListener { removeRecipient(holder, position, holder.itemView.context) })
 
@@ -73,14 +82,14 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
         return recipients.size
     }
 
-
-    private fun updateMessageSent(recipient: Recipient, isChecked: Boolean, context: Context) {
-        recipient.messageSent = if (isChecked) 1 else 0
+    private fun moveToUnsent(recipient: Recipient, position: Int, context: Context){
+        recipient.messageSent = 0
+        recipients.removeAt(position)
+        notifyItemRemoved(position)
         SQLHelper(context).updateRecipient(recipient)
     }
 
     private fun updateRecipient(holder: RecipientAdapter.ViewHolder, position: Int, context: Context) {
-        println("updateRecipient(): updating recipient info...")
         val intent = Intent(context, AddRecipientActivity::class.java)
         intent.putExtra("id", recipients[position].id)
         intent.putExtra("fullName", recipients[position].fullName)
@@ -93,7 +102,6 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
     }
 
     private fun removeRecipient(holder: RecipientAdapter.ViewHolder, position: Int, context: Context) {
-        println("removeRecipient(): deleting item...")
         val recipient: Recipient = recipients[position]
         SQLHelper(context).deleteRecipient(recipient)
         recipients.removeAt(position)
