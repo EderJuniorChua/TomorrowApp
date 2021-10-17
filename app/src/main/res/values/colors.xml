@@ -15,4 +15,10 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="transparent">#00FFFFFF</color>
-</resources>
+
+    <color name="blackPearl">#0B132B</color>
+    <color name="ebonyClay">#1C2541</color>
+    <color name="riverBed">#3A506B</color>
+    <color name="macawBlueGreen">#5BC0BE</color>
+    <color name="tronBlue">#6FFFE9</color>
+></resources>
