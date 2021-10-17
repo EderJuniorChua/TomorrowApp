@@ -33,6 +33,14 @@ class SMSHelper {
         recipient.dateTarget = LocalDate.now().toString()
         recipient.timeTarget = LocalTime.now().plusHours(2).toString()
         SQLHelper(context).updateRecipient(recipient)
-//        refreshRecipientList()
+
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun sendMessageToAllUnsent(context: Context){
+        var unsentRecipients = SQLHelper(context).getUnsentRecipients()
+        for (recipient in unsentRecipients){
+            sendMessage(recipient, context)
+        }
     }
 }
