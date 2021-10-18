@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.time.LocalDate
 import java.time.LocalTime
@@ -33,6 +34,10 @@ class AddRecipientActivity: AppCompatActivity() {
         if (bundle!!.containsKey("fullName")) inputFullName.setText(bundle.getString("fullName"))
         if (bundle!!.containsKey("phoneNumber")) inputPhoneNumber.setText(bundle.getString("phoneNumber"))
         if (bundle!!.containsKey("priorityGroup")) inputPriorityGroup.setText(bundle.getString("priorityGroup"))
+
+        val priority = resources.getStringArray(R.array.priority_group)
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, priority)
+        inputPriorityGroup.setAdapter(arrayAdapter)
 
         val btnConfirm = findViewById<FloatingActionButton>(R.id.btnConfirm)
         btnConfirm.setOnClickListener {
@@ -65,4 +70,9 @@ class AddRecipientActivity: AppCompatActivity() {
     override fun onBackPressed() {
         finish()
     }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
 }
