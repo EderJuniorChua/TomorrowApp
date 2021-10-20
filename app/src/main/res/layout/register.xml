@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blackPearl"
     android:orientation="vertical"
     android:paddingHorizontal="20dp"
     android:paddingVertical="50dp">
@@ -17,7 +18,8 @@
         android:id="@+id/logoTomorrowApp"
         android:layout_width="wrap_content"
         android:layout_height="75dp"
-        android:src="@drawable/logo_tomorrowapp" />
+        android:src="@drawable/logo_tomorrowapp"
+        app:tint="@color/tronBlue" />
 
     <Space
         android:layout_width="match_parent"
@@ -30,6 +32,7 @@
         android:layout_height="wrap_content"
         android:text="Create a new account"
         android:textAlignment="center"
+        android:textColor="@color/tronBlue"
         android:textSize="25sp" />
 
     <LinearLayout
@@ -42,22 +45,31 @@
             android:id="@+id/txtRegisterEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/riverBed"
             android:hint="@string/Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColor="@color/macawBlueGreen"
+            android:textColorHint="@color/macawBlueGreen" />
 
         <EditText
             android:id="@+id/txtRegisterPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/riverBed"
             android:hint="@string/Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/macawBlueGreen"
+            android:textColorHint="@color/macawBlueGreen" />
 
         <EditText
             android:id="@+id/txtRegisterConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/riverBed"
             android:hint="@string/Confirm_Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/macawBlueGreen"
+            android:textColorHint="@color/macawBlueGreen" />
 
         <Button
             android:id="@+id/btnRegister"
