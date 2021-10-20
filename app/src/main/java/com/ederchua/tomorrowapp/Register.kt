@@ -50,8 +50,7 @@ class Register : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
         btnLogin.setOnClickListener{
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 
