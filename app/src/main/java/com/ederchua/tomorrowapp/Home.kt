@@ -15,6 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.ederchua.tomorrowapp.fragments.ConfirmedFragment
 import com.ederchua.tomorrowapp.fragments.RecipientsFragment
 import com.ederchua.tomorrowapp.fragments.adapter.ViewPagerAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -99,7 +100,7 @@ class Home : AppCompatActivity() {
     private fun setUpTabs() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(RecipientsFragment(), "Registrant")
-        adapter.addFragment(RecipientsFragment(), "Confirmed")
+        adapter.addFragment(ConfirmedFragment(), "Confirmed")
         val viewPager = findViewById<ViewPager>(R.id.viewPager)
         viewPager.adapter = adapter
         val tabs = findViewById<TabLayout>(R.id.tabs)
