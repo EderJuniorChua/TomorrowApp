@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="50dp"
+    android:background="@color/blackPearl"
+    android:orientation="vertical"
     android:paddingHorizontal="20dp"
-    android:orientation="vertical">
+    android:paddingVertical="50dp">
 
     <Space
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_weight="0.4"></Space>
 
@@ -20,13 +21,13 @@
         android:src="@drawable/logo_tomorrowapp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/macawBlueGreen" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="0.75" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/formLogin"
@@ -41,21 +42,27 @@
             android:id="@+id/txtLoginEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/riverBed"
             android:hint="@string/Email"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:textColor="@color/macawBlueGreen"
+            android:textColorHint="@color/macawBlueGreen" />
 
         <EditText
             android:id="@+id/txtLoginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/riverBed"
             android:hint="@string/Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/macawBlueGreen"
+            android:textColorHint="@color/macawBlueGreen" />
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_marginHorizontal="80dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
             android:text="@string/Login" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -64,7 +71,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="0.75" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,15 +81,15 @@
         <TextView
             android:id="@+id/tvNoAccountYet"
             android:layout_width="match_parent"
-            android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:text="@string/Register_Prompt" />
+            android:text="@string/Register_Prompt"
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/btnRegister"
-            android:layout_marginHorizontal="90dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="90dp"
             android:text="@string/Register" />
     </LinearLayout>
 
