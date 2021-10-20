@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -67,7 +68,20 @@ class RecipientAdapter (private val recipients: MutableList<Recipient>) : Recycl
         }
 
         val btnDeleteRecipient = holder.btnDelete
-        btnDeleteRecipient.setOnClickListener(View.OnClickListener { removeRecipient(holder, position, holder.itemView.context) })
+        btnDeleteRecipient.setOnClickListener(View.OnClickListener { val builder = AlertDialog.Builder(holder.itemView.context)
+            builder.setMessage("Delete recipient?")
+                .setCancelable(false)
+                .setPositiveButton("Delete") { dialog, id ->
+                    // Delete selected note from database
+                    removeRecipient(holder, position, holder.itemView.context)
+                }
+                .setNegativeButton("Cancel") { dialog, id ->
+                    // Dismiss the dialog
+                    dialog.dismiss()
+                }
+            val alert = builder.create()
+            alert.show()
+             })
 
         //messageSent.setOnCheckedChangeListener(null)
         //messageSent.isChecked = recipient.messageSent == 1
