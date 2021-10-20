@@ -98,14 +98,12 @@ class Home : AppCompatActivity() {
 
     private fun setUpTabs() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(RecipientsFragment(), "Unsent")
-        adapter.addFragment(RecipientsFragment(), "Sent")
+        adapter.addFragment(RecipientsFragment(), "Registrant")
+        adapter.addFragment(RecipientsFragment(), "Confirmed")
         val viewPager = findViewById<ViewPager>(R.id.viewPager)
         viewPager.adapter = adapter
         val tabs = findViewById<TabLayout>(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
-
-
     }
 
 }
