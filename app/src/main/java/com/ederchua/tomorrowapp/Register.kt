@@ -29,6 +29,7 @@ class Register : AppCompatActivity() {
                         if (inputPassword.text.toString() == inputPasswordConfirm.text.toString()) {
                             if (!db.isRegistered(inputEmail.text.toString())) {
                                 db.register(inputEmail.text.toString(), inputPassword.text.toString())
+                                finish()
                             } else {
                                 Toast.makeText(this, "User is already registered", Toast.LENGTH_SHORT).show()
                             }
