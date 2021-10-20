@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import org.apache.commons.lang3.StringUtils.isAlphanumeric
 import org.apache.commons.validator.routines.EmailValidator
 
 class Register : AppCompatActivity() {
@@ -23,14 +24,22 @@ class Register : AppCompatActivity() {
         btnRegister.setOnClickListener{
             println("$inputPassword =?= $inputPasswordConfirm")
             if (EmailValidator.getInstance().isValid(inputEmail.text.toString())){
-                if (inputPassword.text.toString() == inputPasswordConfirm.text.toString()) {
-                    if (!db.isRegistered(inputEmail.text.toString())) {
-                        db.register(inputEmail.text.toString(), inputPassword.text.toString())
-                    } else {
-                        Toast.makeText(this, "User is already registered", Toast.LENGTH_SHORT).show()
+                if (isAlphanumeric(inputPassword.text.toString())){
+                    if (isAlphanumeric(inputPasswordConfirm.text.toString())){
+                        if (inputPassword.text.toString() == inputPasswordConfirm.text.toString()) {
+                            if (!db.isRegistered(inputEmail.text.toString())) {
+                                db.register(inputEmail.text.toString(), inputPassword.text.toString())
+                            } else {
+                                Toast.makeText(this, "User is already registered", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
+                        }
+                    }else {
+                        Toast.makeText(this, "Please confirm your password", Toast.LENGTH_SHORT).show()
                     }
-                } else {
-                    Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
+                }else {
+                    Toast.makeText(this, "Please enter a password", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 Toast.makeText(this, "Email format is invalid", Toast.LENGTH_SHORT).show()
