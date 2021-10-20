@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="Add new recipient"
+        android:text="@string/txtAddNewRecipient"
         android:textAlignment="center"
         android:textColor="@color/tronBlue"
         android:textSize="30sp" />

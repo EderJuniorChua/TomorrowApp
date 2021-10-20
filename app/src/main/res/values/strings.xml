@@ -34,4 +34,5 @@
     <string name="placeholderLocation">Cavite City, Cavite</string>
     <string name="placeholderEstablishment">Red Cross Cavite Chapter</string>
     <string name="placeholderGreeting">Good day, user!</string>
+    <string name="txtAddNewRecipient">Add new recipient</string>
 </resources>
