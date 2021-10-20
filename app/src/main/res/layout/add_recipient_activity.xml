@@ -67,7 +67,10 @@
                 android:background="@color/transparent"
                 android:hint="@string/PhoneNumber"
                 android:importantForAutofill="no"
-                android:inputType="phone"/>
+                android:inputType="phone"
+                android:textColor="@color/macawBlueGreen"
+                android:textColorHint="@color/macawBlueGreen"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
 
