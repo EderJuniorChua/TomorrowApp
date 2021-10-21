@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ScheduleAlert" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="Theme.TomorrowApp" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/secondary</item>
         <item name="colorPrimaryVariant">@color/secondary</item>
@@ -13,10 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="Theme.ScheduleAlert.NoActionBar">
+    <style name="Theme.TomorrowApp.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.ScheduleAlert.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.ScheduleAlert.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.TomorrowApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.TomorrowApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
